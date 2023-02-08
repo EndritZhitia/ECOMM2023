@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECOMM2023", "ECOMM2023\ECOMM2023.csproj", "{CA49E407-B781-4204-B6F4-834238B55C31}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA49E407-B781-4204-B6F4-834238B55C31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA49E407-B781-4204-B6F4-834238B55C31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA49E407-B781-4204-B6F4-834238B55C31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA49E407-B781-4204-B6F4-834238B55C31}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AEA26721-A21F-4EB5-B2E9-0B81AEDED70F}
+	EndGlobalSection
+EndGlobal

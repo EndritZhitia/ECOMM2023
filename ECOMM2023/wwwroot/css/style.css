@@ -1,0 +1,157 @@
+
+ /* main */
+ .slider{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+ }
+
+ .slider-content img{
+    width: 1000px;
+    height: 600px;
+}
+
+.info-div{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 400px;
+    margin-top: -40px;
+}
+.info-div a{
+    margin-top: 7px;
+    margin-left: 51px;
+}
+.show-content{
+    display: block;
+}
+.show-content{
+    display: block;
+}
+
+.hidden-content{
+    display: none;
+}
+
+
+.producers{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 40px;
+}
+.producer{
+    width: 350px;
+    height: 250px;
+}
+.producer img{
+    width: 300px;
+    height: 100px;
+}
+/*footer */
+.footer-div{
+    width:100%;
+    background-color:white;
+}
+.stay-connected-div{
+    display: flex;
+    align-items: center;
+    width: 400px;
+    height: 300px;
+    flex-direction: column;
+
+}
+.imgL-div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 220px;
+    height: 220px;
+}
+.imgL-div img{
+    width: 80px;
+    height: 80px;
+}
+.footer-div{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: -50px;
+}
+.about-us{
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.a-div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.a-div a{
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+.Payment-methods-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    height: 300px;
+
+}
+.card-logo-div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 220px;
+    height: 220px;
+}
+.card-logo-div img{
+    width: 80px;
+    height: 60px;
+}
+
+.button-class{
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: transparent;
+    background-color: rgb(206, 206, 255);
+}
+.logIn-form-div hr{
+    width: 100%;
+    background-color: black;
+    margin-top: 15px;
+}
+.logIn-form-div p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 5px;
+}
+
+
+.stay-connected-div{
+    background-color: white;
+}
+
+.Payment-methods-div{
+    background-color: white;
+}
+
+.about-us{
+    background-color: rgb(255, 255, 255);
+}
+
+.logIn-div {
+    background-color: rgb(255, 255, 255);
+}
+
+
+.logIn-div .button-class {
+    background-color: rgb(63, 63, 221);
+
+}

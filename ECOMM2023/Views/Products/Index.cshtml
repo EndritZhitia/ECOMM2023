@@ -1,0 +1,106 @@
+﻿
+@inject SignInManager<IdentityUser> signInManager;
+@model PaginatedList<ECOMM2023.Models.Product>
+
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/pstyle.css" asp-append-version="true" />
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by name: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+    </div>
+</form>
+
+
+@if (signInManager.IsSignedIn(User) && User.IsInRole("Saler") || User.IsInRole("SuperAdmin"))
+{
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+}
+<div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-10">
+
+            @if (Model.Any())
+            {
+
+                foreach (var item in Model)
+                {
+                    <div class="row p-2 bg-white border rounded">
+                        <div class="col-md-3 mt-1">
+                            @{
+                                string base64 = Convert.ToBase64String(item.Image);
+                                string photo = string.Format("data:image/gif;base64,{0}", base64);
+                            }<img class="img-fluid img-responsive rounded product-image" src="@photo">
+                        </div>
+                        <div class="col-md-6 mt-1">
+                            <h5>@item.ProductName</h5>
+                            <div class="d-flex flex-row">
+                                <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span></span>
+                            </div>
+                            <div class="mt-1 mb-1 spec-1"><span>24h delivery</span><span class="dot"></span><span>Safe Delivery</span><span class="dot"></span><span>Best finish<br></span></div>
+                            <div class="mt-1 mb-1 spec-1"><span>Unique design</span><span class="dot"></span><span>New Model</span><span class="dot"></span><span>Limited Series<br></span></div>
+                            <p class="text-justify text-truncate para mb-0">@item.Description<br><br></p>
+                        </div>
+                        <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                            <div class="d-flex flex-row align-items-center">
+                                <h4 class="mr-1">@item.Price €</h4>
+                            </div>
+                            <h6 class="text-success">Free shipping</h6>
+                            <div class="d-flex flex-column mt-4">
+
+                                <button class="btn btn-outline-primary btn-sm mt-2" type="button">Add to wishlist</button>
+                                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+
+                            
+                                @if (signInManager.IsSignedIn(User) && User.IsInRole("Saler") || User.IsInRole("Admin"))
+                                {
+                                                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+
+                                                <a asp-action="Delete" asp-route-id="@item.Id">Delete </a >
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                }
+            }
+        </div>
+    </div>
+</div>
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Index"
+
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
+   
+   class="btn btn-default @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index"
+   
+   asp-route-pageNumber="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @nextDisabled">
+    Next
+</a>
